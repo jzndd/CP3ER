@@ -2,20 +2,20 @@
 
 
 ## Overview
-This is the official PyTorch implementation of the paper "Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization". Our approach, CP3ER significantly enhances the stability and performance of visual reinforcement learning models. 
+This is the official PyTorch implementation of the paper "Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization". Our approach, CP3ER, significantly enhances the stability and performance of visual reinforcement learning models. 
 <!-- For those interested in delving deeper into our research, you can find detailed versions of our paper. (waiting for the lateset verison)-->
 
 ## Installation
 
 ### Setup
-To install the required packages for Deepmind Control Suite and Metaworld, please run the following command respectively:
+To install the required packages for DeepMind Control Suite and Metaworld, please run the following commands:
 ```bash
-conda env create -f cp3er.yml
-
-conda env activate -f cp3ermw.yaml 
+conda env create -f cp3er.yaml # for dmc
+ 
+conda env activate -f cp3ermw.yaml  # for metaworld
 ```
 
-and then install metaworld package
+Then, install the Metaworld package:
 ```bash
 conda activate cp3ermw
 cd Metaworld
@@ -33,7 +33,7 @@ python train.py task_name=cheetah_run device=cuda:1 use_wb=True seed=1
 ```
 
 ### Training for metaworld tasks
-same as training for dmc tasks, you can run the following scripts for testing in metaworld
+Similar to training for DMC tasks, you can run the following scripts for testing in Metaworld:
 ```bash
 python train_mw.py task_name=assembly-v2
 ```

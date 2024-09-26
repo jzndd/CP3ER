@@ -1,4 +1,4 @@
-name: drqv2
+name: cp3er
 channels:
   - pytorch
   - nvidia
@@ -91,4 +91,3 @@ dependencies:
     - wandb==0.16.1
     - werkzeug==3.0.1
     - yapf==0.31.0
-prefix: /home/lhr/anaconda3/envs/cp3er
