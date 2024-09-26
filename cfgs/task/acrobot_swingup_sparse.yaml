@@ -1,0 +1,7 @@
+defaults:
+  - hard
+  - _self_
+
+task_name: acrobot_swingup_sparse
+lr: 8e-5
+feature_dim: 100
