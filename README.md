@@ -1,9 +1,11 @@
 # Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization
 
+<p align="center" style="font-size: 50px">
+   <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>">[Paper]</a>&emsp;<a href="https://jzndd.github.io/CP3ER-Page/">[Project Website]</a>
+</p>
 
 ## Overview
 This is the official PyTorch implementation of the paper "Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization". Our approach, CP3ER, significantly enhances the stability and performance of visual reinforcement learning models. 
-<!-- For those interested in delving deeper into our research, you can find detailed versions of our paper. (waiting for the lateset verison)-->
 
 ## Installation
 
