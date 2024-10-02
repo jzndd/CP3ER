@@ -1,7 +1,7 @@
 # Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization
 
 <p align="center" style="font-size: 50px">
-   <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>">[Paper]</a>&emsp;<a href="https://jzndd.github.io/CP3ER-Page/">[Project Website]</a>
+   <a href="https://arxiv.org/abs/2410.00051">[Paper]</a>&emsp;<a href="https://jzndd.github.io/CP3ER-Page/">[Project Website]</a>
 </p>
 
 ## Overview
@@ -38,6 +38,22 @@ python train.py task_name=cheetah_run device=cuda:1 use_wb=True seed=1
 Similar to training for DMC tasks, you can run the following scripts for testing in Metaworld:
 ```bash
 python train_mw.py task_name=assembly-v2
+```
+
+## Citation
+
+If you find our research helpful and would like to reference it in your work, please consider citing the paper as follows:
+
+```
+@misc{li2024generalizingconsistencypolicyvisual,
+      title={Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization}, 
+      author={Haoran Li and Zhennan Jiang and Yuhui Chen and Dongbin Zhao},
+      year={2024},
+      eprint={2410.00051},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.00051}, 
+}
 ```
 
 ## Acknowledgement
