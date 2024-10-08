@@ -14,7 +14,7 @@ To install the required packages for DeepMind Control Suite and Metaworld, pleas
 ```bash
 conda env create -f cp3er.yaml # for dmc
  
-conda env activate -f cp3ermw.yaml  # for metaworld
+conda env create -f cp3ermw.yaml  # for metaworld
 ```
 
 Then, install the Metaworld package:
@@ -27,17 +27,17 @@ pip install -e .
 ## Reproducing Experimental Results
 ### Training for dmc tasks
 ```bash
-python train.py task_name=acrobot_swingup
+python train.py task=acrobot_swingup
 ```
 You can decide whether to use wandb to log your experiment process by specifying the 'use_wb' parameter, and determine whether to use a GPU for training by specifying the 'device' parameter. For more parameter options, please refer to the cfgs/config.yaml file.
 ```bash
-python train.py task_name=cheetah_run device=cuda:1 use_wb=True seed=1
+python train.py task=cheetah_run device=cuda:1 use_wb=True seed=1
 ```
 
 ### Training for metaworld tasks
 Similar to training for DMC tasks, you can run the following scripts for testing in Metaworld:
 ```bash
-python train_mw.py task_name=assembly-v2
+python train_mw.py task=assembly-v2
 ```
 
 ## Citation
