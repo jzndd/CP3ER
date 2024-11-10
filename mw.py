@@ -1,8 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
-
 import metaworld
 import random
 import gymnasium as gym
@@ -21,7 +16,7 @@ def make_env(env_name, seed=42, render_mode=None):
     env_cls = ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE[task]
     env = env_cls(seed=seed,render_mode=render_mode)
     env._freeze_rand_vec = False
-    # 相机视角设置
+    # camera setting
     env.camera_name = "corner2"
     env.model.cam_pos[2][:] = [0.75, 0.075, 0.7]
     return env
@@ -38,10 +33,11 @@ class MWEnvWrapper:
         self.env_name = env_name
         self.env = make_env(env_name,seed,render_mode='rgb_array')
         self.env.model.vis.global_.offwidth = 84
-        self.env.model.vis.global_.offheight = 84                  # 设置 render
+        self.env.model.vis.global_.offheight = 84                 
         self.act_dim = int(np.prod(self.env.action_space.shape))
         self.state_dim = int(np.prod(self.env.observation_space.shape))
 
+        # set again
         self.env.mujoco_renderer.width = 84
         self.env.mujoco_renderer.height = 84
         self.env.model.cam_pos[2][:] = [0.75, 0.075, 0.7]
@@ -51,8 +47,6 @@ class MWEnvWrapper:
                 mujoco.mjtObj.mjOBJ_CAMERA,
                 "corner2",
             )
-        
-        # print("action dim:{},state dim:{}".format(self.act_dim, self.state_dim))
 
     def reset(self):
         state , _ = self.env.reset()
@@ -207,11 +201,10 @@ def get_pixels(env: MetaWorldFrameStackWrapper):
 
 def make(env_name, frame_stack, action_repeat, seed,discount):
     
-    # env = make_env(seed=seed,render_mode='rgb_array')
-    env = MWEnvWrapper(seed=seed,env_name=env_name)  # 此时 step 返回值是 state，reward,done,info
+    env = MWEnvWrapper(seed=seed,env_name=env_name)  
         
     env = ActionDTypeWrapper(env, np.float32)
-    env = ActionRepeatWrapper(env, action_repeat, discount)  # 此时 step 返回值是 state，reward,done, gamma,info
+    env = ActionRepeatWrapper(env, action_repeat, discount)  
     
     # # stack several frames
     env = MetaWorldFrameStackWrapper(env, frame_stack)

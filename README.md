@@ -45,6 +45,7 @@ python train_mw.py task=assembly-v2
 If you find our research helpful and would like to reference it in your work, please consider citing the paper as follows:
 
 ```
+# arxiv version
 @misc{li2024generalizingconsistencypolicyvisual,
       title={Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization}, 
       author={Haoran Li and Zhennan Jiang and Yuhui Chen and Dongbin Zhao},
@@ -53,6 +54,16 @@ If you find our research helpful and would like to reference it in your work, pl
       archivePrefix={arXiv},
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2410.00051}, 
+}
+
+# NeurIPS version
+@inproceedings{
+      li2024generalizing,
+      title={Generalizing Consistency Policy to Visual RL with Prioritized Proximal Experience Regularization},
+      author={Haoran Li and Zhennan Jiang and YUHUI CHEN and Dongbin Zhao},
+      booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+      year={2024},
+      url={https://openreview.net/forum?id=MOFwt8OeXr}
 }
 ```
 

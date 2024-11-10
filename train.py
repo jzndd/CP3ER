@@ -1,16 +1,9 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 
 import os
 os.environ['MKL_SERVICE_FORCE_INTEL'] = '1'
 os.environ['MUJOCO_GL'] = 'egl'
-
-# os.environ['WANDB_API_KEY'] = "338a1a94f799ce9a1470532e392f97fe330af917"
-# os.environ['WANDB_MODE'] = "offline"
 
 from pathlib import Path
 

@@ -1,7 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 import random
 import re
 import time
@@ -38,7 +34,6 @@ class OUNoise(object):
     def get_action(self, action, t=0):
         ou_state = self.evolve_state()
 
-        # 将 ou_state 转换为 float32（如果它原本不是）
         ou_state = ou_state.astype(np.float32)
         
         self.sigma = self.max_sigma - (self.max_sigma - self.min_sigma) * min(1.0, t/self.decay_period)

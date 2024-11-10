@@ -1,7 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 
@@ -73,10 +69,6 @@ class Workspace:
         self.eval_env = mw.make(self.cfg.task_name, self.cfg.frame_stack,
                                  self.cfg.action_repeat, self.cfg.seed, self.cfg.discount)
         
-        # action_spec = self.train_env._env._env._env.get_action_space()
-
-        # self.action_low = action_spec.minimum
-        # self.action_high = action_spec.maximum
         
         # create replay buffer
         data_specs = (self.train_env.observation_space,  # obs
@@ -134,7 +126,6 @@ class Workspace:
 
         while eval_until_episode(num_episodes):
             obs = self.eval_env.reset()
-            # print("when eval , obs shape is {}".format(obs.shape))
             done = False
             success = False
             current_steps = 0

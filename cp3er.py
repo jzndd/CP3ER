@@ -12,8 +12,6 @@ from model.networks import Encoder
 
 from torch.distributions import Normal, Categorical, MixtureSameFamily
 
-from copy import deepcopy
-
 class RandomShiftsAug(nn.Module):
     def __init__(self, pad):
         super().__init__()
@@ -210,15 +208,9 @@ class CP3ERAgent:
     
     def _compute_critic_loss(self,  obs, act, rew, discount, next_obs, step):
 
-        # print("obs shape is {}".format(obs.dtype))
-        # print("next obs shape is {}".format(next_obs.dtype))
-        # print("act shape is {}".format(act.dtype))
-
         with torch.no_grad():
 
             next_action = self.actor(next_obs)
-
-            # print("next action shape is {}".format(next_action.dtype))
 
             target_info = self.critic_target(next_obs, next_action)
             mus, stdevs, logits = target_info['mus'], target_info['stdevs'], target_info['logits']

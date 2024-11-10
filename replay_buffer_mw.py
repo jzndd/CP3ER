@@ -1,7 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 import datetime
 import io
 import random
@@ -47,13 +43,9 @@ class ReplayBufferStorage:
 
     def add(self, observation, action, reward, done,discount):
         self._current_episode['observation'].append(observation)
-        # assert observation.shape == self._data_specs[0].shape and observation.dtype == self._data_specs[0].dtype
         self._current_episode['action'].append(action)
-        # assert action.shape == self._data_specs[1].shape and action.dtype == self._data_specs[1].dtype
         self._current_episode['reward'].append(reward)
-        # assert reward.shape == self._data_specs[2].shape and reward.dtype == self._data_specs[2].dtype
         self._current_episode['discount'].append(discount)
-        # assert discount.shape == self._data_specs[3].shape and discount.dtype == self._data_specs[3].dtype
 
         if done:
             episode = {key: np.array(values) for key, values in self._current_episode.items()}

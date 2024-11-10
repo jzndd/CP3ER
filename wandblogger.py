@@ -15,12 +15,11 @@ class WandbLogger(object):
         Args:
             log_dir (str): log directory
         """
-        # self.writer = SummaryWriter(log_dir)
         self.info = logger.info
         self.debug = logger.debug
         self.warning = logger.warning
 
-        wandb_proj = "CP3ER-EXP-dmc-{}".format(task_name)
+        wandb_proj = "CP3ER-dmc-{}".format(task_name)
         wandb_name = "{}-seed:{}".format(policy_type, seed)
         wandb_group = "{}".format(policy_type)
         wandb.init(config=config, project=wandb_proj, name=wandb_name, group=wandb_group, job_type="training")
